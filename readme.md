@@ -47,7 +47,7 @@ Next, set the required environment variables using the command line. For example
 set APP_URL = "YOUR_APP_URL"
 set APP_NAME = "YOUR_APP_NAME"
 set USERNAME = "YOUR_USERNAME"
-set SIGN_IN_URL: 'https://portal.office.com/',
+set SIGN_IN_URL = "https://portal.office.com/"
 set PASSWORD = "YOUR_PASSWORD"
 ```
 
