@@ -1,6 +1,6 @@
 # Power Apps Playwright tests sample
 
-A basic example of writting UI tests for model-driven Power Apps using Playwright. This sample project performs 2 tests:
+A basic example of writing UI tests for model-driven Power Apps using Playwright. This sample project performs 2 tests:
 
 1. Opens a model-driven app and confirms the app name is present
 2. Creates and new contact and checks that an ID is assigned
