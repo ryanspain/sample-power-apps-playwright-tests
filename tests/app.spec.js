@@ -12,6 +12,12 @@ test.beforeEach(async ({ page }) => {
     await page.fill('input[name="passwd"]', config.password);
     await page.click('input[value="Sign in"]');
     await page.waitForNavigation();
+    // Click on the remember me button
+    await page.click('input[value="Yes"]');
+    await page.waitForNavigation();
+    // wait until the URL does not contain the word 'login'
+    // useful for scenarios where MFA is active. It will give you 60 seconds to approve it.
+    await page.waitForURL(/^(?:(?!login).)*$/,{timeout:60000});
 });
     
 test('open app', async ({ page }) => {
@@ -38,9 +44,21 @@ test('create a contact', async ({ page }) => {
     await page.fill('[aria-label="First Name"]', 'Test');
     await page.fill('[aria-label="Last Name"]', `Contact (${Date.now()})`);
 
+    // set a lookup value
+    const lookupFieldLabel = 'Account Name';
+    const lookupFieldTextValue = 'Northwind traders';
+    const clientLookup = page.locator(`[aria-label="${lookupFieldLabel}, Lookup"]`);
+
+    await clientLookup.hover();
+    await clientLookup.click();
+    await clientLookup.fill('');
+    await clientLookup.type(lookupFieldTextValue);
+
+    await page.click('[aria-label="Lookup results"]>li');
+
     // Click on the Save button in the command bar
-    await page.click('[aria-label="Save (CTRL+S)"]')
-    await page.waitForNavigation(),
+    await page.click('[aria-label="Save (CTRL+S)"]');
+    await page.waitForNavigation();
     
     // Check if the next form contains the contacts ID
     await page.waitForFunction('Xrm.Utility.getPageContext().input.entityId !== null');
