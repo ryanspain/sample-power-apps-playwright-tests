@@ -12,12 +12,6 @@ test.beforeEach(async ({ page }) => {
     await page.fill('input[name="passwd"]', config.password);
     await page.click('input[value="Sign in"]');
     await page.waitForNavigation();
-    // Click on the remember me button
-    await page.click('input[value="Yes"]');
-    await page.waitForNavigation();
-    // wait until the URL does not contain the word 'login'
-    // useful for scenarios where MFA is active. It will give you 60 seconds to approve it.
-    await page.waitForURL(/^(?:(?!login).)*$/,{timeout:60000});
 });
     
 test('open app', async ({ page }) => {
