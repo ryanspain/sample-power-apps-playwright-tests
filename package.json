@@ -4,12 +4,11 @@
   "description": "",
   "scripts": {
     "setup": "npm install && npx playwright install",
-    "test": "npx playwright test",
-    "test-local": "set TEST_MODE=local&& npx playwright test"
+    "test": "npx playwright test"
   },
   "author": "Ryan Spain",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.18.0"
+    "@playwright/test": "^1.32.3"
   }
 }
