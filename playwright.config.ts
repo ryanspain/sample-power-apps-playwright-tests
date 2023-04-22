@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   use: {
-    headless: false,
+    // headless: false,
     screenshot: 'on',
     video: 'on'
   },
@@ -10,7 +10,7 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
-      testMatch: /.*\.setup\.js/g
+      testMatch: /.*\.setup\.[js|ts]/g
     },
     {
       name: 'Google Chrome',

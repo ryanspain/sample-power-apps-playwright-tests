@@ -15,13 +15,13 @@ A basic example of writing UI tests for model-driven Power Apps using Playwright
 
 2. Next, set the required environment variables on the system that will be running the tests, e.g. your local machine or the continuous integration server.
 
-    | Key           | Value                      |
-    | ------------- | -------------------------- |
-    | APP_URL       | _Your app URL_             |
-    | APP_NAME      | _Your app name_            |
-    | SIGN_IN_URL   | https://portal.office.com/ |
-    | USER_EMAIL    | _Your test users email_    |
-    | USER_PASSWORD | _Your test users password_ |
+    | Key           | Value                        |
+    | ------------- | ---------------------------- |
+    | APP_URL       | _Your app URL_               |
+    | APP_NAME      | _Your app name_              |
+    | SIGN_IN_URL   | _https://portal.office.com/_ |
+    | USER_EMAIL    | _Your test users email_      |
+    | USER_PASSWORD | _Your test users password_   |
 
 3. Finally, run tests.
 
