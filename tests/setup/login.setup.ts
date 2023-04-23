@@ -1,16 +1,24 @@
 import { test as setup } from '@playwright/test';
 import config from '../../powerapps.config';
 
+import fs from 'fs';
+import path from 'path';
+
 // Multiple signed in roles: https://playwright.dev/docs/auth#multiple-signed-in-roles
 // todo: Testing multiple roles together: https://playwright.dev/docs/auth#testing-multiple-roles-together
 
-setup('sign in as test user 1', async ({ page }) => {
+setup('Login as test user 1', async ({ page }) => {
 
   const { 
     tenant,
     app,
     users: { "Test user 1" : user }, 
   } = config;
+
+  // Exit early if the user is already signed in
+  if (fs.existsSync(user.storageStatePath)) {
+    return;
+  }
 
   // Open the sign in URL
   await page.goto(tenant.signInUrl);
@@ -30,7 +38,7 @@ setup('sign in as test user 1', async ({ page }) => {
   await page.context().storageState({ path: user.storageStatePath });
 });
 
-setup('sign in as test user 2', async ({ page }) => {
+setup('Login as test user 2', async ({ page }) => {
 
   const { 
     tenant,

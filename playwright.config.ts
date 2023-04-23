@@ -4,7 +4,7 @@ export default defineConfig({
   use: {
     // headless: false,
     screenshot: 'on',
-    video: 'on'
+    video: 'on',
   },
   timeout: 15000,
   projects: [
