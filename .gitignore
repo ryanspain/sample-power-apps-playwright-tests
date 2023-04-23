@@ -133,4 +133,4 @@ dist
 test-results
 
 # local test config
-local.powerapps.config.js
+playwright/.auth

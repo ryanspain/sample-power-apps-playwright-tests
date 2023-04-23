@@ -1,5 +1,5 @@
-const { test, expect } = require('@playwright/test');
-const config = require('../powerapps.config')
+import { test, expect } from '@playwright/test';
+import config from '../powerapps.config';
 
 test.beforeEach(async ({ page }) => {
     // Open the sign in URL
