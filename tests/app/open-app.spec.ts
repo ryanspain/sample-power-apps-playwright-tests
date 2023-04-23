@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import config from '../../powerapps.config';
 
-test.describe('Multiple signed in roles', () => {
+test.describe('Testing roles individually', () => {
 
     test.describe('As test user 1', () => {
         
